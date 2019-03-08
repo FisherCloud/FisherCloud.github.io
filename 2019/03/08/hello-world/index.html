@@ -341,6 +341,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/08/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/08/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -436,10 +446,58 @@
           
 
   
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
 
 
 
-        </div>
+
+<% if(theme.gitment.enable) { %>
+<div id="gitment_title" class="gitment_title"></div>
+<div id="container" style="display:none"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  const myTheme = {
+    render(state, instance) {
+      const container = document.createElement('div');
+      container.lang = "en-US";
+      container.className = 'gitment-container gitment-root-container';
+      container.appendChild(instance.renderHeader(state, instance));
+      container.appendChild(instance.renderEditor(state, instance));
+      container.appendChild(instance.renderComments(state, instance));
+      container.appendChild(instance.renderFooter(state, instance));
+      return container;
+    }
+  }
+
+  function showGitment() {
+    $("#gitment_title").attr("style", "display:none");
+    $("#container").attr("style", "").addClass("gitment_container");
+    var gitment = new Gitment({
+      id: decodeURI(window.location.pathname),
+      theme: myTheme,
+      owner: 'fishercloud',
+      repo: 'fishercloud.github.io',
+      oauth: {
+        client_id: 'ec28fa4ef7c6677db27d',
+        client_secret: '372a3e6086a3af6adb95635f36d593c534f8baa0'
+      }
+    });
+    gitment.render('container');
+  }
+
+  showGitment();
+</script>
+<% } %>
+
+        </%></%></div>
         
           
   

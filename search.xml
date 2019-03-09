@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JDK安装配置]]></title>
     <url>%2F2019%2F03%2F09%2FJDK%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[JDK安装配置安装JDK建议安装Java 1.8版本的JDK，这个版本应用广泛，对Android的支持更好！ 附上下载地址：请点击这里进入Oracle官网下载 选择JDK DOWNLOAD进入下载页面,先勾选Accept License Agreement,再根据自己的操作系统下载JDK 附上JDK-1.8.201下载地址:Windows_64位 JDK-1.8.201_Windows_x64 Windows_32位 JDK-1.8.201_Windows_xi586 其他版本请自行进官网下载 下载完成后双击安装，选择安装目录，如果不是固态硬盘（SSD）或者固态硬盘容量小，请选择D盘为解压目录，点击完成，等待安装成功，JDK安装成功后安装程序下一步会提示你安装JRE，需要重新选择路径安装，我这里建议安装到这里可以点击取消安装JRE，因为现在的JDK中已经包含了JRE，不需要另外安装。 配置环境变量 选中“我的电脑”（或者“此电脑”），右键选中属性，点击高级系统设置 再选择环境变量 点击“新建”变量 变量名为：JAVA_HOME 变量值为：你的JDK所在路径 测试一下JRE是否安装成功，WIN+R输入CMD打开命令行，输入java -version，出现以下界面证明JDK安装成功，暂时不要关闭此窗口 再进入环境变量配置，新建变量：CLASSPATH，变量值复制一下内容即可 1%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; 再打开刚刚的命令行窗口，输入javac，出现以下内容即JDK安装配置成功 JDK的安装配置就到这里，有任何问题，欢迎大家在下方评论区留言]]></content>
+    <content type="text"><![CDATA[JDK安装配置下载JDK建议安装Java 1.8版本的JDK，这个版本应用广泛，对Android的支持更好！ 附上下载地址：请点击这里进入Oracle官网下载 选择JDK DOWNLOAD进入下载页面,先勾选Accept License Agreement,再根据自己的操作系统下载JDK 附上JDK-1.8.201下载地址:Windows_64位 JDK-1.8.201_Windows_x64 Windows_32位 JDK-1.8.201_Windows_xi586 其他版本请自行进官网下载 安装JDK下载完成后双击安装，选择安装目录，如果不是固态硬盘（SSD）或者固态硬盘容量小，请选择D盘为解压目录，点击完成，等待安装成功，JDK安装成功后安装程序下一步会提示你安装JRE，需要重新选择路径安装，我这里建议安装到这里可以点击取消安装JRE，因为现在的JDK中已经包含了JRE，不需要另外安装。 配置环境变量 选中“我的电脑”（或者“此电脑”），右键选中属性，点击高级系统设置 再选择环境变量 点击“新建”变量 变量名为：JAVA_HOME 变量值为：你的JDK所在路径 测试一下JRE是否安装成功，WIN+R输入CMD打开命令行，输入java -version，出现以下界面证明JDK安装成功，暂时不要关闭此窗口 再进入环境变量配置，新建变量：CLASSPATH，变量值复制一下内容即可 1%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; 再打开刚刚的命令行窗口，输入javac，出现以下内容即JDK安装配置成功 JDK的安装配置就到这里，如果你觉得有什么不足，欢迎在下方评论区留言]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[Android Studio 安装配置简介]]></title>
     <url>%2F2019%2F03%2F09%2FAndroid-Studio-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B%2F</url>
-    <content type="text"><![CDATA[Android Studio 安装配置简介前言：Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 安装：安装JDK:安装JDK就不在这里详细赘述了，请查看我的另一边博文《JDK安装配置》]]></content>
+    <content type="text"><![CDATA[Android Studio 安装配置简介前言：Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 安装：安装JDK:安装JDK就不在这里详细赘述了，请查看我的另一边博文《JDK安装配置》 安装Android Studio安装Android Studio有两种方法 方法一：直接下载Android Studio安装附上下载链接，请使用浏览器打开链接进行下载，不要用迅雷下载、不要用迅雷下载、不要用迅雷下载，重要的事情说三遍 Windows 64位点击下载 Windows 32位点击下载 安装过程不做详细赘述，注意安装路径即可 方法二：使用Jetbrains公司的ToolBox下载 选择版本下载，我们这里选择Windows版本下载，其他系统请下载相应安装包 附上Windows版本下载链接点击下载 下载完成后，安装即可，安装完成后打开ToolBox，ToolBox界面如下，我已经安装过了 先不要安装，点击右上角设置，更改开发工具的安装路径，建议安装在D盘，然后返回上一级安装即可 配置SDK附上下载链接点击下载 下载完成后解压缩到D盘，D://Android/SDK/你的SDK根目录 然后打开Android Studio]]></content>
       <categories>
         <category>Android</category>
       </categories>

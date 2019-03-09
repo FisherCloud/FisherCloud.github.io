@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[Android Studio 安装配置简介]]></title>
     <url>%2F2019%2F03%2F09%2FAndroid-Studio-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E7%AE%80%E4%BB%8B%2F</url>
-    <content type="text"><![CDATA[Android Studio 安装配置简介前言：Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 安装：安装JDK:安装JDK就不在这里详细赘述了，请查看我的另一边博文《JDK安装配置》 安装Android Studio安装Android Studio有两种方法 方法一：直接下载Android Studio安装附上下载链接，请使用浏览器打开链接进行下载，不要用迅雷下载、不要用迅雷下载、不要用迅雷下载，重要的事情说三遍 Windows 64位点击下载 Windows 32位点击下载 安装过程不做详细赘述，注意安装路径即可 方法二：使用Jetbrains公司的ToolBox下载 选择版本下载，我们这里选择Windows版本下载，其他系统请下载相应安装包 附上Windows版本下载链接点击下载 下载完成后，安装即可，安装完成后打开ToolBox，ToolBox界面如下，我已经安装过了 先不要安装，点击右上角设置，更改开发工具的安装路径，建议安装在D盘，然后返回上一级安装即可 配置SDK附上下载链接点击下载 下载完成后解压缩到D盘，D://Android/SDK/你的SDK根目录 然后打开Android Studio]]></content>
+    <content type="text"><![CDATA[Android Studio 安装配置简介前言：Android Studio 是谷歌推出的一个Android集成开发工具，基于IntelliJ IDEA. 类似 Eclipse ADT，Android Studio 提供了集成的 Android 开发工具用于开发和调试。 安装：安装JDK:安装JDK就不在这里详细赘述了，请查看我的另一边博文《JDK安装配置》 安装Android Studio安装Android Studio有两种方法 方法一：直接下载Android Studio安装附上下载链接，请使用浏览器打开链接进行下载，不要用迅雷下载、不要用迅雷下载、不要用迅雷下载，重要的事情说三遍 Windows 64位点击下载 Windows 32位点击下载 安装过程不做详细赘述，注意安装路径即可 方法二：使用Jetbrains公司的ToolBox下载 选择版本下载，我们这里选择Windows版本下载，其他系统请下载相应安装包 附上Windows版本下载链接点击下载 下载完成后，安装即可，安装完成后打开ToolBox，ToolBox界面如下，我已经安装过了 先不要安装，点击右上角设置，更改开发工具的安装路径，建议安装在D盘，然后返回上一级安装即可 配置SDK附上下载链接点击下载 下载完成后解压缩到D盘，D://Android/SDK/你的SDK根目录 然后打开Android Studio 第一次进入会进行各种设置，最重要的是选择Android SDK的系统环境，进入Android studio后新建一个工程选择空白的Android工程，选择Android版本，创建成功之后，IDE会自动下载相关依赖和环境，等待下载完成即可 未完待续~ 详细介绍后续补齐 如果你觉得有什么不足，欢迎在下方评论区留言]]></content>
       <categories>
         <category>Android</category>
       </categories>

@@ -94,7 +94,9 @@
 <meta property="og:description" content="点亮LED灯LED（发光二极管）的介绍LED全称为半导体发光二极管，采用半导体材料制成的，以直接将电能转化为光能，电号转换成光信号的发光器件；其特点是功耗低、高亮度、色彩艳丽、抗振动、寿命长（正常发光8-10万小时）、冷光源等优点，是真正“绿色照明”。以LED为光源的灯饰产品在21世纪的将来，必然取代白织灯，成为人类照明的又一次革命。  LED工作参数 普通发光二极管工作电压压降为： 1.6v ~">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/03/10/4-点亮LED灯/LED灯.png">
-<meta property="og:updated_time" content="2019-03-10T01:16:59.836Z">
+<meta property="og:image" content="http://yoursite.com/2019/03/10/4-点亮LED灯/仿真电路.png">
+<meta property="og:image" content="http://yoursite.com/2019/03/10/4-点亮LED灯/LED.gif">
+<meta property="og:updated_time" content="2019-03-10T01:56:50.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【51单片机】4-点亮LED灯">
 <meta name="twitter:description" content="点亮LED灯LED（发光二极管）的介绍LED全称为半导体发光二极管，采用半导体材料制成的，以直接将电能转化为光能，电号转换成光信号的发光器件；其特点是功耗低、高亮度、色彩艳丽、抗振动、寿命长（正常发光8-10万小时）、冷光源等优点，是真正“绿色照明”。以LED为光源的灯饰产品在21世纪的将来，必然取代白织灯，成为人类照明的又一次革命。  LED工作参数 普通发光二极管工作电压压降为： 1.6v ~">
@@ -411,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  220
+                  330
                 </span>
               
 
@@ -456,7 +458,11 @@
 <li>工作电流为：<br><br>1~20ma</li>
 <li>根据欧姆定律我们可以算出<br><br>A（电流）=V（电压）/R（电阻）<br><br>可以算出电阻的阻值可以在150欧~3000欧之间</li>
 </ul>
-<h2 id="画出仿真电路"><a href="#画出仿真电路" class="headerlink" title="画出仿真电路"></a>画出仿真电路</h2><h2 id="编写LED灯的点亮程序"><a href="#编写LED灯的点亮程序" class="headerlink" title="编写LED灯的点亮程序"></a>编写LED灯的点亮程序</h2>
+<h2 id="画出仿真电路"><a href="#画出仿真电路" class="headerlink" title="画出仿真电路"></a>画出仿真电路</h2><p><img src="/2019/03/10/4-点亮LED灯/仿真电路.png" alt="仿真电路" title="仿真电路"></p>
+<h2 id="编写LED灯的点亮程序"><a href="#编写LED灯的点亮程序" class="headerlink" title="编写LED灯的点亮程序"></a>编写LED灯的点亮程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * @Description: 随机点亮LED灯</span><br><span class="line"> * @Author: 鱼摆摆</span><br><span class="line"> * @Github: https://github.com/FisherCloud</span><br><span class="line"> * @Date: 2018-12-25 12:57:51</span><br><span class="line"> * @LastEditTime: 2019-03-10 09:26:28</span><br><span class="line"> */</span><br><span class="line">#include &lt;reg52.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define LED P0</span><br><span class="line"></span><br><span class="line">void delay(unsigned int z)</span><br><span class="line">&#123;</span><br><span class="line">    unsigned int x, y;</span><br><span class="line"></span><br><span class="line">    for (x = z; x &gt; 0; x--)</span><br><span class="line">        for (y = 110; y &gt; 0; y--)</span><br><span class="line">            ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main(void)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    int r = 0;</span><br><span class="line"></span><br><span class="line">    do</span><br><span class="line">    &#123;</span><br><span class="line">        r = rand() % 256;</span><br><span class="line">        LED = r;</span><br><span class="line">        delay(100);</span><br><span class="line">    &#125; while (1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/2019/03/10/4-点亮LED灯/LED.gif" alt="LED" title="LED"></p>
+<p>如果你觉得有什么不足，欢迎在下方评论区留言</p>
+
       
     </div>
     
@@ -650,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点亮LED灯"><span class="nav-number">1.</span> <span class="nav-text">点亮LED灯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LED（发光二极管）的介绍"><span class="nav-number">1.1.</span> <span class="nav-text">LED（发光二极管）的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LED工作参数"><span class="nav-number">1.2.</span> <span class="nav-text">LED工作参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画出仿真电路"><span class="nav-number">1.3.</span> <span class="nav-text">画出仿真电路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写LED灯的点亮程序"><span class="nav-number">1.4.</span> <span class="nav-text">编写LED灯的点亮程序</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点亮LED灯"><span class="nav-number">1.</span> <span class="nav-text">点亮LED灯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LED（发光二极管）的介绍"><span class="nav-number">1.1.</span> <span class="nav-text">LED（发光二极管）的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LED工作参数"><span class="nav-number">1.2.</span> <span class="nav-text">LED工作参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画出仿真电路"><span class="nav-number">1.3.</span> <span class="nav-text">画出仿真电路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写LED灯的点亮程序"><span class="nav-number">1.4.</span> <span class="nav-text">编写LED灯的点亮程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">1.5.</span> <span class="nav-text">效果图</span></a></li></ol></li></ol></div>
             
 
           </div>

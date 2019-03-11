@@ -12,6 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if('Linux'){
+            if (prompt('请输入文章密码') !== 'Linux'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -103,7 +113,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/08/Linux期末复习/linux.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/Linux期末复习/vi.gif">
 <meta property="og:image" content="http://yoursite.com/2019/03/08/Linux期末复习/ls-l.png">
-<meta property="og:updated_time" content="2019-03-10T01:17:26.220Z">
+<meta property="og:updated_time" content="2019-03-11T07:32:02.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Linux】Linux期末复习">
 <meta name="twitter:description" content="Linux期末复习资料🐧作者：鱼摆摆 2019-01-08 update for 2019-03-8 适用于四川师范大学计算机科学学院Linux高级程序设计课程 教师：张莹   一、选择题（Linux命令） 20’ who: 显示所有正在使用系统的用户、所用终端名、注册到系统的时间  -H 或 –heading：显示各栏位的标题信息列； -i 或 -u 或 –idle：显示闲置时间，若该用户在前">
@@ -325,7 +335,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/08/Linux期末复习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="FisherCloud">
+      <meta itemprop="name" content="FisherCloud/鱼摆摆">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
@@ -1569,6 +1579,35 @@
     <div>
       
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/03/08/Linux期末复习/">【Linux】Linux期末复习</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 FisherCloud/鱼摆摆 的个人博客">FisherCloud/鱼摆摆</a></p>
+  <p><span>发布时间:</span>2019年03月08日 - 21:27</p>
+  <p><span>最后更新:</span>2019年03月11日 - 15:32</p>
+  <p><span>原始链接:</span><a href="/2019/03/08/Linux期末复习/" title="【Linux】Linux期末复习">http://yoursite.com/2019/03/08/Linux期末复习/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/03/08/Linux期末复习/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
 
       
     </div>
@@ -1582,7 +1621,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    FisherCloud
+    FisherCloud/鱼摆摆
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -1692,9 +1731,9 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="FisherCloud">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="FisherCloud/鱼摆摆">
             
-              <p class="site-author-name" itemprop="name">FisherCloud</p>
+              <p class="site-author-name" itemprop="name">FisherCloud/鱼摆摆</p>
               <p class="site-description motion-element" itemprop="description">欢迎来到FisherCloud个人博客！</p>
           </div>
 
@@ -1800,11 +1839,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">FisherCloud</span>
+  <span class="author" itemprop="copyrightHolder">FisherCloud/鱼摆摆</span>
 
   
 </div>
 
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
@@ -1816,6 +1856,7 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+-->
 
 
 

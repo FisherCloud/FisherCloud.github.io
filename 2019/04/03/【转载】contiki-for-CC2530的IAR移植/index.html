@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="FisherCloud&#x2F;鱼摆摆">
 <meta property="og:description" content="【引言】移植的必要性 通过移植Contiki到IAR环境，可以很清晰的查看contiki操作系统的细节，同时IAR开发环境支持CC2530在线仿真，这对于WSN网络是十分有用的，有效地。这也是为什么喜欢2530的原因。 概述通过移植Contiki到IAR环境，可以很清晰的查看contiki操作系统的细节，同时IAR开发环境支持CC2530在线仿真，这对于WSN网络是十分有用的，有效地。这也是为什么">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-03T10:17:31.757Z">
+<meta property="og:updated_time" content="2019-04-03T10:21:31.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【转载】contiki for CC2530的IAR移植">
 <meta name="twitter:description" content="【引言】移植的必要性 通过移植Contiki到IAR环境，可以很清晰的查看contiki操作系统的细节，同时IAR开发环境支持CC2530在线仿真，这对于WSN网络是十分有用的，有效地。这也是为什么喜欢2530的原因。 概述通过移植Contiki到IAR环境，可以很清晰的查看contiki操作系统的细节，同时IAR开发环境支持CC2530在线仿真，这对于WSN网络是十分有用的，有效地。这也是为什么">
@@ -478,30 +478,27 @@
 <p>变成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static volatile unsigned long timer_value = 0;</span><br></pre></td></tr></table></figure>
 <p>更恰当的修改</p>
-<p>//static CC_AT_DATA struct timer debouncetimer;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//static CC_AT_DATA struct timer debouncetimer;</span><br></pre></td></tr></table></figure>
 <p>变成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ifdef SDCC</span><br><span class="line">static__data structtimer debouncetimer;</span><br><span class="line">#else</span><br><span class="line">staticstruct timer debouncetimer;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 <p><strong>关于中断</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void 2 port_0_isr(void) __interrupt(P0INT_VECTOR)</span><br></pre></td></tr></table></figure>
 <p>修改成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#ifdef SDCC</span><br><span class="line">void</span><br><span class="line">port_0_isr(void) __interrupt(P0INT_VECTOR)</span><br><span class="line">#else</span><br><span class="line">#pragma vector=P0INT_VECTOR</span><br><span class="line">__near_func __interrupt void port_0_isr(void)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<p>1， 根据iocc2530.h修改了cc253x.h<br>为了找到cc2530的IEEE Addres，在cc253x.h（改编自iocc2530.h）中</p>
-<p>添加了#define X_IEEE_ADDR   PXREG(0x780C )  /<em> Start of unique IEEE Address </em>/</p>
+<p>1， 根据iocc2530.h修改了cc253x.h</p>
+<p>为了找到cc2530的IEEE Addres，在cc253x.h（改编自iocc2530.h）中添加了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define X_IEEE_ADDR   PXREG(0x780C )  /* Start of unique IEEE Address */</span><br></pre></td></tr></table></figure>
 <p>2，中断服务函数 linux 下是SDCC  要改成IAR格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void rtimer_isr(void) __interrupt(T1_VECTOR);</span><br></pre></td></tr></table></figure>
 <p>改成</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#ifdef SDCC </span><br><span class="line">void port_0_isr(void) __interrupt(P0INT_VECTOR)</span><br><span class="line">#else</span><br><span class="line">#pragma vector=P0INT_VECTOR</span><br><span class="line">__near_func __interrupt void port_0_isr(void)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<p>此时还有90个错误<br>//<strong>xdata </strong>at(0x0000) static unsigned long timer_value = 0;</p>
-<p>static volatile unsigned long timer_value = 0; </p>
+<p>此时还有90个错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//__xdata __at(0x0000) static unsigned long timer_value = 0;</span><br><span class="line">static volatile unsigned long timer_value = 0;</span><br></pre></td></tr></table></figure>
 <p>修改了button-sensor.h 使之符合IAR格式</p>
 <p>修改了button-sensor.c 清除了cc2531的情况</p>
 <p>–这样做，不合算，仅是为了更快的修改而已，以后也要加上cc2531这种情况</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Error[e46]: Undefined external&quot;BUTTON_IRQ_CHECK::?relay&quot;referredinbutton-sensor ( F:\Contiki OS\2530contiki2.7\Debug\Obj\</span><br><span class="line">Error[e46]: Undefined external&quot;BUTTON_IRQ_FLAG_OFF::?relay&quot;referredinbutton-sensor ( F:\Contiki OS\2530contiki2.7\Debug\Obj\</span><br><span class="line">Error[e27]: Entry&quot;rime_sniffer_add::?relay&quot;inmodule rime ( F:\Contiki OS\2530contiki2.7\Debug\Obj\rime.r51 ) redefinedinmodule</span><br></pre></td></tr></table></figure>
-<p>相应的文件没有添加上<br>Error[e46]: Undefined external “autostart_processes” referred in contiki-main ( F:\Contiki OS\2530contiki2.7\Debug\Obj\contiki-main.r51 ) </p>
-<p>相应的文件没有添加上</p>
-<p>Error[e46]: Undefined external “rtimer_arch_init::?relay” referred in rtimer ( F:\Contiki OS\2530contiki2.7\Debug\Obj\rtimer.r51 ) </p>
-<p>相应的文件没有添加上 </p>
-<p>Error[e46]: Undefined external “?DPL1” referred in cc2530-rf ( F:\Contiki OS\2530contiki2.7\Debug\Obj\cc2530-rf.r51 )</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">相应的文件没有添加上 </span><br><span class="line"></span><br><span class="line">Error[e46]: Undefined external &quot;autostart_processes&quot; referred in contiki-main ( F:\Contiki OS\2530contiki2.7\Debug\Obj\contiki-main.r51 ) </span><br><span class="line"></span><br><span class="line">相应的文件没有添加上</span><br><span class="line"></span><br><span class="line">Error[e46]: Undefined external &quot;rtimer_arch_init::?relay&quot; referred in rtimer ( F:\Contiki OS\2530contiki2.7\Debug\Obj\rtimer.r51 ) </span><br><span class="line"></span><br><span class="line">相应的文件没有添加上 </span><br><span class="line"></span><br><span class="line">Error[e46]: Undefined external &quot;?DPL1&quot; referred in cc2530-rf ( F:\Contiki OS\2530contiki2.7\Debug\Obj\cc2530-rf.r51 )</span><br></pre></td></tr></table></figure>
 <p>在8051def.h 屏蔽了部分宏（没用明确定义）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//#if !defined(__SDCC_mcs51) &amp;&amp; !defined(SDCC_mcs51)</span><br><span class="line">//#define __data</span><br><span class="line">//#define __xdata</span><br><span class="line">//#define __code</span><br><span class="line">//#define __bit bool</span><br><span class="line">//#define __sfr volatile unsigned char</span><br><span class="line">//#define __sbit volatile bool</span><br><span class="line">//#define __critical</span><br><span class="line">//#define __at(x)</span><br><span class="line">//#define __using(x)</span><br><span class="line">//#define __interrupt(x)</span><br><span class="line">//#define __naked</span><br><span class="line">//#endif</span><br></pre></td></tr></table></figure>
 <p>在cc253x.h文件中主要修改了关于读取芯片MAC的地址，如下</p>
@@ -544,7 +541,7 @@
   <p><span>本文标题:</span><a href="/2019/04/03/【转载】contiki-for-CC2530的IAR移植/">【转载】contiki for CC2530的IAR移植</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 FisherCloud/鱼摆摆 的个人博客">FisherCloud/鱼摆摆</a></p>
   <p><span>发布时间:</span>2019年04月03日 - 18:03</p>
-  <p><span>最后更新:</span>2019年04月03日 - 18:17</p>
+  <p><span>最后更新:</span>2019年04月03日 - 18:21</p>
   <p><span>原始链接:</span><a href="/2019/04/03/【转载】contiki-for-CC2530的IAR移植/" title="【转载】contiki for CC2530的IAR移植">https://fishercloud.github.io/2019/04/03/【转载】contiki-for-CC2530的IAR移植/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://fishercloud.github.io/2019/04/03/【转载】contiki-for-CC2530的IAR移植/" aria-label="复制成功！"></i></span>
   </p>

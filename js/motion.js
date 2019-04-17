@@ -50,7 +50,7 @@ $(document).ready(function() {
   SidebarToggleLine.prototype.transform = function(status) {
     this.el.velocity('stop').velocity(this.status[status]);
   };
-
+  /*
   var sidebarToggleLine1st = new SidebarToggleLine({
     el    : '.sidebar-toggle-line-first',
     status: {
@@ -70,6 +70,32 @@ $(document).ready(function() {
     status: {
       arrow: {width: '50%', rotateZ: '45deg', top: '-2px'},
       close: {width: '100%', rotateZ: '45deg', top: '-5px'}
+    }
+  });
+  
+  */
+  var sidebarToggleLine1st = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-first',
+    status: {
+      arrow: {width: '50%', rotateZ: '45deg', top: '2px', left: '6px'},
+      // close: {width: '100%', rotateZ: '-45deg', top: '5px', left: '0px'} //X形
+      close: {width: '50%', rotateZ: '-45deg', top: '2px', left: '0px'} //箭头形
+    }
+  });
+  var sidebarToggleLine2nd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-middle',
+    status: {
+      arrow: {width: '90%'},
+      // close: {opacity: 0} //X形
+      close: {width: '90%'} //箭头形
+    }
+  });
+  var sidebarToggleLine3rd = new SidebarToggleLine({
+    el: '.sidebar-toggle-line-last',
+    status: {
+      arrow: {width: '50%', rotateZ: '-45deg', top: '-2px', left: '6px'},
+      // close: {width: '100%', rotateZ: '45deg', top: '-5px', left: '0px'} //X形
+      close: {width: '50%', rotateZ: '45deg', top: '-2px', left: '0px'} //箭头形
     }
   });
 

@@ -24,8 +24,8 @@
 <script>
     (function(){
         if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请询问主编大大');
                 history.back();
             }
         }
@@ -34,6 +34,13 @@
 
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css?v=1.0.2">
 
 
 
@@ -969,7 +976,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fas fa-fish"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">FisherCloud/鱼摆摆</span>
 
@@ -999,7 +1006,7 @@
 <script>
     var now = new Date(); 
     function createtime() { 
-        var grt= new Date("11/27/2017 12:00:00");//在此处修改你的建站时间
+        var grt= new Date("3/8/2019 12:00:00");//在此处修改你的建站时间
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -1007,8 +1014,8 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = " Runing "+dnum+" D "; 
-        document.getElementById("times").innerHTML = hnum + " H " + mnum + " M " + snum + " S"; 
+        document.getElementById("timeDate").innerHTML = " 本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 时 " + mnum + " 分 " + snum + " 秒"; 
     } 
 setInterval("createtime()",250);
 </script>

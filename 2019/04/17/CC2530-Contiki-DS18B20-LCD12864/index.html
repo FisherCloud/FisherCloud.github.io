@@ -102,13 +102,13 @@
 
 
 
-<meta name="description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864[传送门] ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
+<meta name="description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864【传送门】 ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
 <meta name="keywords" content="Contiki,CC2530,DS18B20,LCD12864">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CC2530+Contiki+DS18B20+LCD12864">
 <meta property="og:url" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/index.html">
 <meta property="og:site_name" content="FisherCloud&#x2F;鱼摆摆">
-<meta property="og:description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864[传送门] ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
+<meta property="og:description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864【传送门】 ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/串口输出.png">
 <meta property="og:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/LCD12864.png">
@@ -116,10 +116,10 @@
 <meta property="og:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/DS18B20_EXP.png">
 <meta property="og:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/串口.gif">
 <meta property="og:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/LCD.gif">
-<meta property="og:updated_time" content="2019-04-17T07:38:13.737Z">
+<meta property="og:updated_time" content="2019-04-17T07:50:33.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CC2530+Contiki+DS18B20+LCD12864">
-<meta name="twitter:description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864[传送门] ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
+<meta name="twitter:description" content="前言CC2530 + Contiki操作系统，使用DS18B20温度传感器进行温度的采集和显示（串口打印和LCD显示）。    驱动代码LCD程序驱动参考CC2530+Contiki+LCD12864【传送门】 ds18b20.h将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录  123456789101112131415161718192021222324252627282">
 <meta name="twitter:image" content="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/串口输出.png">
 
 
@@ -474,7 +474,7 @@
 <p><img src="/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/串口输出.png" alt="串口输出" title="串口输出"></p>
 <p><img src="/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/LCD12864.png" alt="LCD12864" title="LCD12864"></p>
 <hr>
-<h1 id="驱动代码"><a href="#驱动代码" class="headerlink" title="驱动代码"></a>驱动代码</h1><p>LCD程序驱动参考CC2530+Contiki+LCD12864[传送门]</p>
+<h1 id="驱动代码"><a href="#驱动代码" class="headerlink" title="驱动代码"></a>驱动代码</h1><p>LCD程序驱动参考CC2530+Contiki+LCD12864【<a href="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-LCD12864/">传送门</a>】</p>
 <h2 id="ds18b20-h"><a href="#ds18b20-h" class="headerlink" title="ds18b20.h"></a>ds18b20.h</h2><p>将下面两个文件(ds18b20.h ds18b20.c)保存到以下目录</p>
 <p><img src="/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/DS18B20.png" alt="DS18B20" title="DS18B20"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#ifndef DS18B20_H_</span><br><span class="line">#define DS18B20_H_</span><br><span class="line"></span><br><span class="line">#include &quot;cc253x.h&quot;</span><br><span class="line">#include &quot;sys/clock.h&quot;</span><br><span class="line">/**************************************************</span><br><span class="line">  以下定义为DS18B20支持的所有命令</span><br><span class="line">***************************************************/</span><br><span class="line"></span><br><span class="line">#define SEARCH_ROM      0xF0              //搜索ROM</span><br><span class="line">#define READ_ROM        0x33              //读ROM</span><br><span class="line">#define MATCH_ROM       0x55              //匹配ROM(挂多个DS18B20时使用)</span><br><span class="line">#define SKIP_ROM        0xCC              //跳过匹配ROM(单个DS18B20时跳过)</span><br><span class="line">#define ALARM_SEARCH    0xEC              //警报搜索</span><br><span class="line"></span><br><span class="line">#define CONVERT_T       0x44              //开始转换温度</span><br><span class="line">#define WR_SCRATCHPAD   0x4E              //写便笺</span><br><span class="line">#define RD_SCRATCHPAD   0xBE              //读便笺</span><br><span class="line">#define CPY_CCTATCHPAD  0x48              //复制便笺</span><br><span class="line">#define RECALL_EE       0xB8              //未启用</span><br><span class="line">#define RD_PWR_SUPPLY   0xB4              //读电源供应</span><br><span class="line"></span><br><span class="line">#define DQ            P1_7                //DS18B20数据IO口</span><br><span class="line">#define DQ_DIR_OUT    0x80                //DS18B20 IO方向</span><br><span class="line">#define CL_DQ()     DQ = 0              //清除数据</span><br><span class="line">#define SET_DQ()    DQ = 1             //设置数据</span><br><span class="line">#define SET_OUT()   P1DIR |=  DQ_DIR_OUT  //设置IO方向,out设置IO方向为输出</span><br><span class="line">#define SET_IN()    P1DIR &amp;= ~DQ_DIR_OUT  //设置IO方向,in设备IO方向为输入</span><br><span class="line"></span><br><span class="line">extern void DS18B20_Write(unsigned char x); //DS18B20写命令</span><br><span class="line"></span><br><span class="line">extern unsigned char DS18B20_Read(void);    //DS18B20读数据</span><br><span class="line"></span><br><span class="line">extern void DS18B20_Init(void);             //DS18B20初始化/复位</span><br><span class="line"></span><br><span class="line">extern void DS18B20_SendConvert(void);      //发送转换温度命令</span><br><span class="line"></span><br><span class="line">extern void DS18B20_GetTem(unsigned char *integer, unsigned char *decimal);           //DS18B20获取温度</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
@@ -516,7 +516,7 @@
   <p><span>本文标题:</span><a href="/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/">CC2530+Contiki+DS18B20+LCD12864</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 FisherCloud/鱼摆摆 的个人博客">FisherCloud/鱼摆摆</a></p>
   <p><span>发布时间:</span>2019年04月17日 - 14:08</p>
-  <p><span>最后更新:</span>2019年04月17日 - 15:38</p>
+  <p><span>最后更新:</span>2019年04月17日 - 15:50</p>
   <p><span>原始链接:</span><a href="/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/" title="CC2530+Contiki+DS18B20+LCD12864">https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://fishercloud.github.io/2019/04/17/CC2530-Contiki-DS18B20-LCD12864/" aria-label="复制成功！"></i></span>
   </p>

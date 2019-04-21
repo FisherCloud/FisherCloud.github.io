@@ -42,7 +42,7 @@
   <entry>
     <title><![CDATA[【单片机】基于单片机的智能语音控制系统]]></title>
     <url>%2F2019%2F04%2F05%2FLD3320A%2F</url>
-    <content type="text"><![CDATA[前言成员四川师范大学-计算机科学学院计算机科学与技术（物联网）2016110205 陈加兰2016110228 刘雨霜2016110252 余鑫]]></content>
+    <content type="text"><![CDATA[前言使用语音识别芯片LD3320A配合使用STM32F103RXT6，实现语音识别，语音对话，家居控制。手机亦可通过APP连接ESP8266实现家居控制。成员四川师范大学-计算机科学学院计算机科学与技术（物联网）2016110205 陈加兰2016110228 刘雨霜2016110252 余鑫Github地址传送门PS开发中，慢慢完善……]]></content>
       <categories>
         <category>单片机</category>
       </categories>

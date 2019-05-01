@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fishercloud.github.io/"/>
-  <updated>2019-04-17T07:49:30.393Z</updated>
+  <updated>2019-05-01T07:04:05.202Z</updated>
   <id>https://fishercloud.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于单火线的无线开关研究与设计</title>
+    <link href="https://fishercloud.github.io/2019/05/01/SingleFireLineSwitch/"/>
+    <id>https://fishercloud.github.io/2019/05/01/SingleFireLineSwitch/</id>
+    <published>2019-05-01T07:01:13.000Z</published>
+    <updated>2019-05-01T07:04:05.202Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="&#x57FA;&#x4E8E;&#x5355;&#x706B;&#x7EBF;&#x7684;&#x65E0;&#x7EBF;&#x5F00;&#x5173;&#x7814;&#x7A76;&#x4E0E;&#x8BBE;&#x8BA1;"><a href="#&#x57FA;&#x4E8E;&#x5355;&#x706B;&#x7EBF;&#x7684;&#x65E0;&#x7EBF;&#x5F00;&#x5173;&#x7814;&#x7A76;&#x4E0E;&#x8BBE;&#x8BA1;" class="headerlink" title="&#x57FA;&#x4E8E;&#x5355;&#x706B;&#x7EBF;&#x7684;&#x65E0;&#x7EBF;&#x5F00;&#x5173;&#x7814;&#x7A76;&#x4E0E;&#x8BBE;&#x8BA1;"></a>&#x57FA;&#x4E8E;&#x5355;&#x706B;&#x7EBF;&#x7684;&#x65E0;&#x7EBF;&#x5F00;&#x5173;&#x7814;&#x7A76;&#x4E0E;&#x8BBE;&#x8BA1;</h1><p>&#x56DB;&#x5DDD;&#x5E08;&#x8303;&#x5927;&#x5B66;2018&#x5E74;&#x5927;&#x5B66;&#x751F;&#x521B;&#x65B0;&#x8BAD;&#x7EC3;&#x9879;&#x76EE;</p><h2 id="&#x6210;&#x5458;"><a href="#&#x6210;&#x5458;" class="headerlink" title="&#x6210;&#x5458;"></a>&#x6210;&#x5458;</h2><ul><li>2016110202 &#x66F9;&#x4FCA;</li><li>2016110252 &#x4F59;&#x946B;</li></ul><!-- rebuild by neat --><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;&amp;#x57FA;&amp;#x4E8E;&amp;#x5355;&amp;#x706B;&amp;#x7EBF;&amp;#x7684;&amp;#x65E0;&amp;#x7EBF;&amp;#x5F00;&amp;#x5173;&amp;#x7814;&amp;#x7A76;&amp;#x4E0E;&amp;#x8BBE;&amp;#x8BA1;&quot;&gt;&lt;a href=&quot;#
+      
+    
+    </summary>
+    
+      <category term="单火线开关" scheme="https://fishercloud.github.io/categories/%E5%8D%95%E7%81%AB%E7%BA%BF%E5%BC%80%E5%85%B3/"/>
+    
+    
+      <category term="单火线" scheme="https://fishercloud.github.io/tags/%E5%8D%95%E7%81%AB%E7%BA%BF/"/>
+    
+      <category term="开关" scheme="https://fishercloud.github.io/tags/%E5%BC%80%E5%85%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>CC2530+Contiki+LCD12864</title>
